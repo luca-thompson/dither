@@ -1,8 +1,10 @@
+#[path = "dither/dispatch.rs"] mod dispatch;
+
 //args
-use clap::Parser;
+use clap::{Parser};
 
 //image
-use image::ImageReader;
+//use image::ImageReader;
 
 
 #[derive(Parser, Debug)]
@@ -12,7 +14,10 @@ struct Args {
     f_in: String,
 
     #[arg(long)]
-    f_out: String
+    f_out: String,
+
+    #[arg(long)]
+    algorithm: String
 
 }
 
@@ -23,9 +28,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("{}", args.f_in);
     println!("{}", args.f_out);
 
-    let img = ImageReader::open(args.f_in)?.decode()?;
+    //let img = ImageReader::open(args.f_in)?.decode()?;
+    //img.save(args.f_out)?;
 
-    img.save(args.f_out)?;
+    dispatch::dispatch();
 
     Ok(())
 }

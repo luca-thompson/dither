@@ -4,7 +4,7 @@
 use clap::{Parser};
 
 //image
-//use image::ImageReader;
+use image::{ImageReader, DynamicImage};
 
 
 #[derive(Parser, Debug)]
@@ -28,10 +28,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("{}", args.f_in);
     println!("{}", args.f_out);
 
-    //let img = ImageReader::open(args.f_in)?.decode()?;
-    //img.save(args.f_out)?;
+    let img = ImageReader::open(args.f_in)?.decode()?;
 
-    dispatch::dispatch();
+    dispatch::dispatch(img, args.algorithm);
 
     Ok(())
 }

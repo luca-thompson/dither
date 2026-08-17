@@ -25,12 +25,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let args = Args::parse();
 
-    println!("{}", args.f_in);
-    println!("{}", args.f_out);
+    println!("File in: '{}'.", args.f_in);
 
     let mut img = ImageReader::open(args.f_in)?.decode()?;
 
+    println!("Dithering using '{}' algorithm.", args.algorithm);
     dispatch::dispatch(&mut img, args.algorithm);
+
+    println!("Success! Saving as: '{}'.", args.f_out);
 
     img.save(args.f_out);
 

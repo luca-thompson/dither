@@ -4,7 +4,7 @@
 use clap::{Parser};
 
 //image
-use image::{ImageReader, DynamicImage};
+use image::{ImageReader};
 
 
 #[derive(Parser, Debug)]

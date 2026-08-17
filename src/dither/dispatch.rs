@@ -5,12 +5,14 @@ use image::DynamicImage;
 
 pub fn dispatch(image: DynamicImage, algorithm: String){
 
-    match algorithm {
-        "Bayer" => {
-            bayer::bayerDither();
+    let alg = algorithm.as_str();
+
+    match alg {
+        "bayer" => {
+            bayer::bayer_dither(image);
         }
         _ => {
-            println!("Unrecognised algorithm: '" + algorithm + "'.");
+            println!("Unrecognised algorithm: '{}'.", algorithm);
         }
     }
 }

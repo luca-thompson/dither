@@ -10,7 +10,7 @@ pub fn threshold_dither(image: &mut DynamicImage){
 
     const BLACK: image::Rgba<u8> = image::Rgba([0,0,0,255]);
 
-    const WHITE: image::Rgba<u8> = image::Rgba([255, 125, 255, 255]);
+    const WHITE: image::Rgba<u8> = image::Rgba([255, 255, 255, 255]);
 
     for x in 0..width{
         for y in 0..height{

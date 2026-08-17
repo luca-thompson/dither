@@ -1,4 +1,4 @@
-#[path = "dither/dispatch.rs"] mod dispatch;
+#[path = "dispatch.rs"] mod dispatch;
 
 //args
 use clap::{Parser};
@@ -28,9 +28,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("{}", args.f_in);
     println!("{}", args.f_out);
 
-    let img = ImageReader::open(args.f_in)?.decode()?;
+    let mut img = ImageReader::open(args.f_in)?.decode()?;
 
-    dispatch::dispatch(img, args.algorithm);
+    dispatch::dispatch(&mut img, args.algorithm);
+
+    img.save(args.f_out);
 
     Ok(())
 }

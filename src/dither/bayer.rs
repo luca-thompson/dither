@@ -10,9 +10,9 @@ pub fn bayer_dither(image: &mut DynamicImage){
 
     let (width, height) = image.dimensions();
 
-    const BLACK: image::Rgba<u8> = image::Rgba([30, 230, 70, 255]);
+    const BLACK: image::Rgba<u8> = image::Rgba([0, 0, 0, 255]);
 
-    const WHITE: image::Rgba<u8> = image::Rgba([10, 80, 80, 255]);
+    const WHITE: image::Rgba<u8> = image::Rgba([255, 255, 255, 255]);
 
     for x in 0..width{
         for y in 0..height{

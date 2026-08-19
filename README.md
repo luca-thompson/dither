@@ -3,15 +3,15 @@
 Simple, terminal-based rust program to perform dithering on images.
 
 Supports:
-Threshold
-Random
-Bayer (2x)
-HalfTone (in-progress)
+- Threshold
+- Random
+- Bayer (2x)
+- HalfTone (in-progress)
 
 Algorithms to be added:
-Bayer (4x / 8x)
-Floyd-Steinberg
-Void and Cluster
+- Bayer (4x / 8x)
+- Floyd-Steinberg
+- Void and Cluster
 
 ### Installation
 

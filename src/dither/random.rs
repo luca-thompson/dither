@@ -14,15 +14,9 @@ pub fn random_dither(image: &mut DynamicImage){
 
     const WHITE: image::Rgba<u8> = image::Rgba([255, 255, 255, 255]);
 
-    let mut random_numbers:Vec<u8> = Vec::new();
-
-    for _i in 0..(width*height){
-        random_numbers.push(rand::rng().random_range(0..=255));
-    }
-
     for x in 0..width{
         for y in 0..height{
-            if image.get_pixel(x, y)[0] < rand::rng().random_range(0..=255){
+            if image.get_pixel(x, y)[0] < rand::rng().random_range(0..255){
                 image.put_pixel(x, y, BLACK);
             }
             else{

@@ -34,7 +34,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("Success! Saving as: '{}'.", args.f_out);
 
-    img.save(args.f_out);
+    let _ = img.save(args.f_out);
 
     Ok(())
 }

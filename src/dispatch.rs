@@ -1,6 +1,7 @@
 #[path = "dither/threshold.rs"] mod threshold;
 #[path = "dither/bayer.rs"] mod bayer;
 #[path = "dither/halftone.rs"] mod halftone;
+#[path = "dither/random.rs"] mod random;
 
 use image::DynamicImage;
 
@@ -18,6 +19,9 @@ pub fn dispatch(image: &mut DynamicImage, algorithm: String){
         }
         "halftone" => {
             halftone::halftone_dither(image);
+        }
+        "random" => {
+            random::random_dither(image);
         }
         _ => {
             println!("Unrecognised algorithm: '{}'.", algorithm);

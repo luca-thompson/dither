@@ -1,5 +1,6 @@
 #[path = "dither/threshold.rs"] mod threshold;
-#[path = "dither/bayer.rs"] mod bayer;
+#[path = "dither/bayer_2.rs"] mod bayer_2;
+#[path = "dither/bayer_4.rs"] mod bayer_4;
 #[path = "dither/halftone.rs"] mod halftone;
 #[path = "dither/random.rs"] mod random;
 #[path = "grayscale.rs"] mod grayscale;
@@ -18,8 +19,11 @@ pub fn dispatch(image: &mut DynamicImage, algorithm: String){
         "threshold" => {
             threshold::threshold_dither(image);
         }
-        "bayer" => {
-            bayer::bayer_dither(image);
+        "bayer_2" => {
+            bayer_2::bayer_dither(image);
+        }
+        "bayer_4" => {
+            bayer_4::bayer_dither(image);
         }
         "halftone" => {
             halftone::halftone_dither(image);

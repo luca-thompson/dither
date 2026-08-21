@@ -13,6 +13,9 @@ Algorithms to be added:
 - Floyd-Steinberg
 - Void and Cluster
 
+### Examples
+<img src="examples/bayer_example.jpg" alt="bayer_screenshot" width="350"/> <img src="examples/random_example.jpg" alt="random_screenshot" width="350"/>
+
 ### Installation
 
 Clone the repo:

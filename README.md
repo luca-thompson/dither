@@ -5,16 +5,16 @@ Simple, terminal-based rust program to perform dithering on images.
 Supports:
 - Threshold
 - Random
-- Bayer (2x)
+- Bayer (2x, 4x)
 - HalfTone (in-progress)
 
 Algorithms to be added:
-- Bayer (4x / 8x)
+- Bayer (8x) (along with an arg for the matrix size)
 - Floyd-Steinberg
 - Void and Cluster
 
 ### Examples
-<img src="examples/bayer_example.jpg" alt="bayer_screenshot" width="350"/> <img src="examples/random_example.jpg" alt="random_screenshot" width="350"/>
+<img src="examples/bayer_4_example.jpg" alt="bayer_screenshot" width="350"/> <img src="examples/random_example.jpg" alt="random_screenshot" width="350"/>
 
 ### Installation
 
